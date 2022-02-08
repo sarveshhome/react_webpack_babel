@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   //entry property - https://webpack.js.org/configuration/entry-context/#entry
@@ -11,6 +12,7 @@ module.exports = {
   output: {
     path:path.resolve(__dirname, "dist"),
   },
+  mode: 'development',
   module: {
     rules: [
       {

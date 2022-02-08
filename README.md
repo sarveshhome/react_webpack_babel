@@ -79,7 +79,10 @@ module.exports = {
 
  17.  Defining rules for babel
 
- 
+ 18.  package.json 
+
+        `"dev": "webpack serve",
+  "build": "webpack",`
 
 - what is webpack?
 
