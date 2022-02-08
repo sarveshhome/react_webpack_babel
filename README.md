@@ -49,6 +49,38 @@ module.exports = {
 
 10. Add the bundled js file to the HTML file
 
+11. setup babel
+
+    `npm install @babel/core babel-loader --save-dev`
+
+12.  @babel/core  which is the core transpiler. URL - https://babeljs.io/docs/en/babel-core
+
+13.  babel-loader which is a webpack loader that will help webpack to use babel transpiler. 
+
+        URL - https://webpack.js.org/loaders/babel-loader/
+
+14.  
+
+        `module: {
+    rules: [
+      {
+        test: /\.?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        }
+      },
+    ]
+  },`
+
+ 15. Rules : https://webpack.js.org/configuration/module/#rule
+
+ 16.  `npm install @babel/preset-env @babel/preset-react --save-dev`
+
+ 17.  Defining rules for babel
+
+ 
+
 - what is webpack?
 
 - What is babel?
