@@ -1,8 +1,9 @@
 import React  from "react";
 import ReactDOM from "react-dom";
+import App from "./App";
 
 ReactDOM.render(
-    <h1>welcom react webpack and babal setup</h1>,
+    <h1>welcom react webpack and babal setup<App/></h1>,    
     document.getElementById('root')
 )
 
