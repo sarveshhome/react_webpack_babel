@@ -81,6 +81,14 @@ module.exports = {
 
  18.  package.json 
 
+19. Install Jest 
+
+20. `npm install --save-dev jest`
+
+21. `npm run test`
+
+22. `npm install jest --global`
+
         `"dev": "webpack serve",
   "build": "webpack",`
 
