@@ -1,33 +1,56 @@
 const {getFirstPlayer,addScore} = require('../src/player');
 
-let player1 = {
-    name: "Sarvesh",
-    score: 20,
-}
-
-let player2 = {
-    name: "Sarvesh",
-    score: 20,
-} 
-
-
-
-
-test('First Player check to be',()=>{
-    
-    expect(getFirstPlayer(player1,player2)).toBe(player1);
-})
-
-test('First Player to Equal',()=>{
-    //ddScore(player1,20);
-    expect(getFirstPlayer(player1,player2)).not.toBe(player2);
-})
-
-
-test('player1 and player2 tobe', () => {
-    expect(addScore(player1,20)).toBe({name:"Sarvesh", score:20}); 
-  })
+describe('Player Functions', () => {
+    // Tests for getFirstPlayer function
+    describe('getFirstPlayer', () => {
+      test('should return the first player when two players are provided', () => {
+        const player1 = { name: 'John', score: 0 };
+        const player2 = { name: 'Jane', score: 0 };
+        
+        expect(getFirstPlayer(player1, player2)).toBe(player1);
+      });
   
-  test('player1 and player2 not tobe', () => {
-    expect(addScore(player1,20)).toEqual({name:"Sarvesh", score:20}); 
-  })
+      test('should return undefined when no players are provided', () => {
+        expect(getFirstPlayer()).toBeUndefined();
+      });
+    });
+  
+    // Tests for addScore function
+    describe('addScore', () => {
+      test('should add positive score to player', () => {
+        const player = { name: 'John', score: 0 };
+        addScore(player, 10);
+        expect(player.score).toBe(10);
+      });
+  
+      test('should handle negative scores', () => {
+        const player = { name: 'John', score: 10 };
+        addScore(player, -5);
+        expect(player.score).toBe(5);
+      });
+  
+      test('should handle zero score addition', () => {
+        const player = { name: 'John', score: 10 };
+        addScore(player, 0);
+        expect(player.score).toBe(10);
+      });
+  
+      test('should handle decimal scores', () => {
+        const player = { name: 'John', score: 0 };
+        addScore(player, 5.5);
+        expect(player.score).toBe(5.5);
+      });
+  
+      test('should throw error when player is null', () => {
+        expect(() => {
+          addScore(null, 10);
+        }).toThrow();
+      });
+  
+      test('should throw error when player is undefined', () => {
+        expect(() => {
+          addScore(undefined, 10);
+        }).toThrow();
+      });
+    });
+  });
